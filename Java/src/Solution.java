@@ -53,7 +53,7 @@ class Solution {
         return squaredNums;
     }
 
-    public boolean containsNearbyDuplicate2(int[] nums, int k) {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
 
         if (k == 0) return false;
 

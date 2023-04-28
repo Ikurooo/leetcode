@@ -47,3 +47,24 @@ class Solution:
                 squared_nums[right_pointer - left_pointer] = nums[right_pointer] ** 2
                 right_pointer -= 1
         return squared_nums
+    
+    def containsDuplicate(self, nums: List[int]) -> bool:
+
+        singles: set = set()
+
+        for num in nums:
+            if num in singles:
+                return True
+            singles.add(num)
+        return False
+    
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+
+        singles: dict = {}
+
+        for index, num in enumerate(nums):
+            if num in singles and index - singles.get(num) <= k:
+                return True
+            singles[num] = index
+        return False
+    
