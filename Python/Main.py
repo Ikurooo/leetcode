@@ -3,31 +3,37 @@ from typing import List
 import numpy as np
 
 
-
-
-def test_two_sum(nums, target, expected):
+def test_two_sum(nums: List[int], target: int, expected: int) -> List[int]:
     sol = Solution.Solution()
-    result = sol.twoSum(nums, target)
+    result: List[int] = sol.twoSum(nums, target)
     if result == expected:
         print("Test 1 passed")
     else:
         print("Test 1 failed. Expected: {}, but got: {}".format(expected, result))
 
-def test_plus_one(digits, expected):
+def test_plus_one(digits: List[int], expected: List[int]) -> List[int]:
     sol = Solution.Solution()
-    result = sol.plusOne(digits)
+    result: List[int] = sol.plusOne(digits)
     if result == expected:
         print("Test 2 passed")
     else:
         print("Test 2 failed. Expected: {}, but got: {}".format(expected, result))
 
-def test_sorted_squares(nums, expected):
+def test_sorted_squares(nums: List[int], expected: List[int]) -> List[int]:
     sol = Solution.Solution()
-    result = sol.sortedSquares(nums)
+    result: List[int] = sol.sortedSquares(nums)
     if result == expected:
         print("Test 3 passed")
     else:
         print("Test 3 failed. Expected: {}, but got: {}".format(expected, result))
+
+def test_contains_duplicate_1(nums: List[int], expected: bool) -> bool:
+    sol = Solution.Solution()
+    result: bool = sol.containsDuplicate1(nums)
+    if result == expected:
+        print("Test 4 passed")
+    else:
+        print("Test 4 failed. Expected: {}, but got: {}".format(expected, result))
 
 
 test_array_1: List[int] = [1, 2, 4, 23, 6, 17, 36, 0, 5]
@@ -84,12 +90,34 @@ test_array_15: List[int] = [-4, -4, -4, -4, 0, 0, 0, 1, 1, 1, 4, 4, 4]
 answer_array_15: List[int] = [0, 0, 0, 1, 1, 1, 16, 16, 16, 16, 16, 16, 16]
 
 
+test_array_16: List[int] = [1, 0, 0, 1, 1]
+target_6: int = 1
+
+test_array_17: List[int] = [1, 0, 0, 1, 1]
+target_7: int = 4
+
+test_array_18: List[int] = [1, 2, 3, 4, 5]
+target_8: int = 4
+
+test_array_19: List[int] = [1, 3, 0, 2, 1]
+target_9: int = 1
+
+test_array_20: List[int] = [1, 0, 0, 1, 1]
+target_10: int = 0
+
+
+test_array_21: List[int] = [1, 1, 1, 1, 1]
+test_array_22: List[int] = [1, 2, 3, 4, 5]
+test_array_23: List[int] = [1, 2, 3, 4, 1]
+test_array_24: List[int] = [-1, 0, 1, 2, -1]
+test_array_25: List[int] = [31, 42, 234, 53, 1]
+
+
 test_two_sum(test_array_1, target_1, answer_array_1)
 test_two_sum(test_array_2, target_2, answer_array_2)
 test_two_sum(test_array_3, target_3, answer_array_3)
 test_two_sum(test_array_4, target_4, answer_array_4)
 test_two_sum(test_array_5, target_5, answer_array_5)
-
 
 test_plus_one(test_array_6, answer_array_6)
 test_plus_one(test_array_7, answer_array_7)
@@ -102,3 +130,9 @@ test_sorted_squares(test_array_12, answer_array_12)
 test_sorted_squares(test_array_13, answer_array_13)
 test_sorted_squares(test_array_14, answer_array_14)
 test_sorted_squares(test_array_15, answer_array_15)
+
+test_contains_duplicate_1(test_array_16, True)
+test_contains_duplicate_1(test_array_17, True)
+test_contains_duplicate_1(test_array_18, False)
+test_contains_duplicate_1(test_array_19, True)
+test_contains_duplicate_1(test_array_20, True)

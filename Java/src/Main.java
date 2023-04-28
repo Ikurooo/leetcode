@@ -149,7 +149,7 @@ public class Main {
 
     public static void testContainsDuplicate2(int[] testArray, int target, boolean answerBoolean, Solution solution) {
 
-        boolean received = solution.containsNearbyDuplicate2(testArray, target);
+        boolean received = solution.containsNearbyDuplicate(testArray, target);
         if (received == answerBoolean) {
             System.out.println("Test 4 successful");
         } else {
