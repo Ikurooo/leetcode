@@ -48,7 +48,7 @@ class Solution:
                 right_pointer -= 1
         return squared_nums
     
-    def containsDuplicate1(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: List[int]) -> bool:
 
         singles: set = set()
 
@@ -58,7 +58,7 @@ class Solution:
             singles.add(num)
         return False
     
-    def containsDuplicate2(self, nums: List[int], k: int) -> bool:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
 
         singles: dict = {}
 
@@ -67,3 +67,4 @@ class Solution:
                 return True
             singles[num] = index
         return False
+    

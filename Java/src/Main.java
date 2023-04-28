@@ -103,11 +103,11 @@ public class Main {
         testSortedSquares(testArray14, answerArray14, solution);
         testSortedSquares(testArray15, answerArray15, solution);
 
-        testContainsDuplicate2(testArray16, target6, true, solution);
-        testContainsDuplicate2(testArray17, target7, true, solution);
-        testContainsDuplicate2(testArray18, target8, false, solution);
-        testContainsDuplicate2(testArray19, target9, false, solution);
-        testContainsDuplicate2(testArray20, target10, false, solution);
+        testContainsNearbyDuplicate(testArray16, target6, true, solution);
+        testContainsNearbyDuplicate(testArray17, target7, true, solution);
+        testContainsNearbyDuplicate(testArray18, target8, false, solution);
+        testContainsNearbyDuplicate(testArray19, target9, false, solution);
+        testContainsNearbyDuplicate(testArray20, target10, false, solution);
 
         testContainsDuplicate(testArray21, true, solution);
         testContainsDuplicate(testArray22, false, solution);
@@ -147,7 +147,7 @@ public class Main {
         }
     }
 
-    public static void testContainsDuplicate2(int[] testArray, int target, boolean answerBoolean, Solution solution) {
+    public static void testContainsNearbyDuplicate(int[] testArray, int target, boolean answerBoolean, Solution solution) {
 
         boolean received = solution.containsNearbyDuplicate(testArray, target);
         if (received == answerBoolean) {
@@ -161,9 +161,9 @@ public class Main {
 
         boolean received = solution.containsDuplicate(testArray);
         if (received == answerBoolean) {
-            System.out.println("Test 4 successful");
+            System.out.println("Test 5 successful");
         } else {
-            System.out.println("Test failed, expected: " + answerBoolean + ", received: " + received);
+            System.out.println("Test 5 failed, expected: " + answerBoolean + ", received: " + received);
         }
     }
 }

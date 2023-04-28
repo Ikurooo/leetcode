@@ -27,13 +27,21 @@ def test_sorted_squares(nums: List[int], expected: List[int]) -> List[int]:
     else:
         print("Test 3 failed. Expected: {}, but got: {}".format(expected, result))
 
-def test_contains_duplicate_1(nums: List[int], expected: bool) -> bool:
+def test_contains_duplicate(nums: List[int], expected: bool) -> bool:
     sol = Solution.Solution()
-    result: bool = sol.containsDuplicate1(nums)
+    result: bool = sol.containsDuplicate(nums)
     if result == expected:
         print("Test 4 passed")
     else:
         print("Test 4 failed. Expected: {}, but got: {}".format(expected, result))
+
+def test_contains_nearby_duplicate(nums: List[int], target:int, expected: bool) -> bool:
+    sol = Solution.Solution()
+    result: bool = sol.containsNearbyDuplicate(nums, target)
+    if result == expected:
+        print("Test 5 passed")
+    else:
+        print("Test 5 failed. Expected: {}, but got: {}".format(expected, result))
 
 
 test_array_1: List[int] = [1, 2, 4, 23, 6, 17, 36, 0, 5]
@@ -131,8 +139,16 @@ test_sorted_squares(test_array_13, answer_array_13)
 test_sorted_squares(test_array_14, answer_array_14)
 test_sorted_squares(test_array_15, answer_array_15)
 
-test_contains_duplicate_1(test_array_16, True)
-test_contains_duplicate_1(test_array_17, True)
-test_contains_duplicate_1(test_array_18, False)
-test_contains_duplicate_1(test_array_19, True)
-test_contains_duplicate_1(test_array_20, True)
+#fix these test cases later
+
+test_contains_nearby_duplicate(test_array_16, target_6, True)
+test_contains_nearby_duplicate(test_array_17, target_7, False)
+test_contains_nearby_duplicate(test_array_18, target_8, True)
+test_contains_nearby_duplicate(test_array_19, target_9, True)
+test_contains_nearby_duplicate(test_array_20, target_10, False)
+
+test_contains_duplicate(test_array_20, True)
+test_contains_duplicate(test_array_21, True)
+test_contains_duplicate(test_array_22, False)
+test_contains_duplicate(test_array_23, False)
+test_contains_duplicate(test_array_24, False)
