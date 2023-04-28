@@ -76,6 +76,13 @@ public class Main {
         int[] testArray20 = new int[] {1, 0, 0, 1, 1};
         int target10 = 0;
 
+
+        int[] testArray21 = new int[] {1, 1, 1, 1, 1};
+        int[] testArray22 = new int[] {1, 2, 3, 4, 5};
+        int[] testArray23 = new int[] {1, 2, 3, 4, 1};
+        int[] testArray24 = new int[] {-1, 0, 1, 2, -1};
+        int[] testArray25 = new int[] {31, 42, 234, 53, 1};
+
         //tests
         testTwoSum(testArray1, target1, answerArray1, solution);
         testTwoSum(testArray2, target2, answerArray2, solution);
@@ -101,6 +108,12 @@ public class Main {
         testContainsDuplicate2(testArray18, target8, false, solution);
         testContainsDuplicate2(testArray19, target9, false, solution);
         testContainsDuplicate2(testArray20, target10, false, solution);
+
+        testContainsDuplicate(testArray21, true, solution);
+        testContainsDuplicate(testArray22, false, solution);
+        testContainsDuplicate(testArray23, true, solution);
+        testContainsDuplicate(testArray24, true, solution);
+        testContainsDuplicate(testArray25, false, solution);
 
     }
 
@@ -137,6 +150,16 @@ public class Main {
     public static void testContainsDuplicate2(int[] testArray, int target, boolean answerBoolean, Solution solution) {
 
         boolean received = solution.containsNearbyDuplicate2(testArray, target);
+        if (received == answerBoolean) {
+            System.out.println("Test 4 successful");
+        } else {
+            System.out.println("Test failed, expected: " + answerBoolean + ", received: " + received);
+        }
+    }
+
+    public static void testContainsDuplicate(int[] testArray, boolean answerBoolean, Solution solution) {
+
+        boolean received = solution.containsDuplicate(testArray);
         if (received == answerBoolean) {
             System.out.println("Test 4 successful");
         } else {
