@@ -60,6 +60,22 @@ public class Main {
         int[] testArray15 = new int[] {-4, -4, -4, -4, 0, 0, 0, 1, 1, 1, 4, 4, 4};
         int[] answerArray15 = new int[] {0, 0, 0, 1, 1, 1, 16, 16, 16, 16, 16, 16, 16};
 
+
+        int[] testArray16 = new int[] {1, 0, 0, 1, 1};
+        int target6 = 1;
+
+        int[] testArray17 = new int[] {1, 0, 0, 1, 1};
+        int target7 = 4;
+
+        int[] testArray18 = new int[] {1, 2, 3, 4, 5};
+        int target8 = 4;
+
+        int[] testArray19 = new int[] {1, 3, 0, 2, 1};
+        int target9 = 1;
+
+        int[] testArray20 = new int[] {1, 0, 0, 1, 1};
+        int target10 = 0;
+
         //tests
         testTwoSum(testArray1, target1, answerArray1, solution);
         testTwoSum(testArray2, target2, answerArray2, solution);
@@ -79,6 +95,13 @@ public class Main {
         testSortedSquares(testArray13, answerArray13, solution);
         testSortedSquares(testArray14, answerArray14, solution);
         testSortedSquares(testArray15, answerArray15, solution);
+
+        testContainsDuplicate2(testArray16, target6, true, solution);
+        testContainsDuplicate2(testArray17, target7, true, solution);
+        testContainsDuplicate2(testArray18, target8, false, solution);
+        testContainsDuplicate2(testArray19, target9, false, solution);
+        testContainsDuplicate2(testArray20, target10, false, solution);
+
     }
 
     public static void testTwoSum(int[] testArray, int target, int[] answerArray, Solution solution) {
@@ -108,6 +131,16 @@ public class Main {
             System.out.println("Test 3 successful");
         } else {
             System.out.println("Test failed, expected: " + Arrays.toString(answerArray) + ", received: " + Arrays.toString(received));
+        }
+    }
+
+    public static void testContainsDuplicate2(int[] testArray, int target, boolean answerBoolean, Solution solution) {
+
+        boolean received = solution.containsNearbyDuplicate2(testArray, target);
+        if (received == answerBoolean) {
+            System.out.println("Test 4 successful");
+        } else {
+            System.out.println("Test failed, expected: " + answerBoolean + ", received: " + received);
         }
     }
 }
